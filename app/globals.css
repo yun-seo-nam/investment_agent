@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-terminal-bg text-terminal-text font-mono;
+  }
+}
+
+@layer components {
+  .terminal-window {
+    @apply bg-terminal-bg border border-terminal-border rounded-lg p-4 font-mono text-sm;
+  }
+  
+  .terminal-header {
+    @apply flex items-center justify-between mb-4 pb-2 border-b border-terminal-border;
+  }
+  
+  .terminal-output {
+    @apply space-y-1 overflow-y-auto max-h-96;
+  }
+  
+  .terminal-line {
+    @apply font-mono text-sm leading-relaxed;
+  }
+  
+  .chart-container {
+    @apply bg-chart-bg border border-terminal-border rounded-lg p-4;
+  }
+  
+  .data-table {
+    @apply w-full text-sm;
+  }
+  
+  .data-table th {
+    @apply text-left p-2 border-b border-terminal-border text-terminal-gray font-medium;
+  }
+  
+  .data-table td {
+    @apply p-2 border-b border-terminal-border/50;
+  }
+  
+  .accent-button {
+    @apply bg-accent-primary hover:bg-accent-primary/90 text-black font-medium px-4 py-2 rounded transition-colors;
+  }
+  
+  .secondary-button {
+    @apply bg-terminal-border hover:bg-terminal-border/80 text-terminal-text font-medium px-4 py-2 rounded transition-colors;
+  }
+  
+  .danger-button {
+    @apply bg-accent-danger hover:bg-accent-danger/90 text-white font-medium px-4 py-2 rounded transition-colors;
+  }
+  
+  .metric-card {
+    @apply bg-terminal-bg border border-terminal-border rounded-lg p-3;
+  }
+  
+  .metric-label {
+    @apply text-terminal-gray text-xs uppercase tracking-wider mb-1;
+  }
+  
+  .metric-value {
+    @apply text-terminal-text text-lg font-semibold;
+  }
+  
+  .status-indicator {
+    @apply inline-flex items-center gap-2 px-2 py-1 rounded text-xs font-medium;
+  }
+  
+  .status-online {
+    @apply bg-green-500/20 text-green-400 border border-green-500/30;
+  }
+  
+  .status-offline {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+  
+  .status-warning {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+}
